@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".UpdateActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Menu Ubah\nKuliner Nusantara"
+        android:textAlignment="center"
+        android:lineHeight="30dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/quicksandbold"
+        android:textColor="@color/black"
+        android:layout_marginBottom="40dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Silahkan ubah menu kuliner nusantara :"
+        android:textColor="@color/red"
+        android:padding="10dp"
+        android:fontFamily="@font/quicksandmedium"
+        android:layout_gravity="end"
+        android:layout_marginBottom="20dp"
+        />
+
+    <EditText
+        android:id="@+id/et_namakuliner_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nama Kuliner"
+        android:fontFamily="@font/quicksandsemibold"
+        android:background="@drawable/kotak_edittext"
+        android:padding="15dp"
+        android:drawableStart="@drawable/nama_kuliner_24"
+        android:drawablePadding="10dp"
+        android:layout_marginBottom="20dp"
+        />
+
+    <EditText
+        android:id="@+id/et_asalkuliner_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Asal Kuliner"
+        android:fontFamily="@font/quicksandsemibold"
+        android:background="@drawable/kotak_edittext"
+        android:padding="15dp"
+        android:drawableStart="@drawable/asal_24"
+        android:drawablePadding="10dp"
+        android:layout_marginBottom="20dp"
+        />
+
+    <EditText
+        android:id="@+id/et_deskripsikuliner_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Deskripsi Kuliner"
+        android:fontFamily="@font/quicksandsemibold"
+        android:background="@drawable/kotak_edittext"
+        android:padding="15dp"
+        android:drawableStart="@drawable/description_24"
+        android:drawablePadding="10dp"
+        android:layout_marginBottom="20dp"
+        android:inputType="textMultiLine"
+        android:lines="2"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_update"
+        android:backgroundTint="#3658BD"
+        android:layout_width="200dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Ubah Kuliner"
+        android:letterSpacing="0.003"
+        android:fontFamily="@font/quicksandbold"
+        />
+
+
+
+
+
+</LinearLayout>
