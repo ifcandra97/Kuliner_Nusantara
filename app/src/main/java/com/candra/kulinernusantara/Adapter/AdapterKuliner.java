@@ -52,7 +52,7 @@ public class AdapterKuliner extends RecyclerView.Adapter<AdapterKuliner.HolderDa
         holder.tvId.setText(String.valueOf(mk.getId()));
         holder.tvNama.setText(mk.getNama());
         holder.tvAsal.setText(mk.getAsal());
-        holder.tvDeskripsi.setText(mk.getDeskripsi());
+        holder.tvDeskripsi.setText(mk.getDeskripsi_singkat());
 
     }
 

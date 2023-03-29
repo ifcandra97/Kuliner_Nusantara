@@ -3,6 +3,7 @@ package com.candra.kulinernusantara;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity
     private RecyclerView rvKuliner;
     private ProgressBar pbLoading;
     private RecyclerView.Adapter rvAdapterKuliner;
+
     private RecyclerView.LayoutManager rvLayoutKuliner;
     private List<ModelKuliner> listKuliner = new ArrayList<>();
     private FloatingActionButton fabTambahKuliner;
@@ -46,16 +48,20 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        rvKuliner.setHasFixedSize(true);
+//        rvKuliner.setHasFixedSize(true);
         /*Performance*/
-        rvKuliner.setItemViewCacheSize(24);
-        rvKuliner.setDrawingCacheEnabled(true);
-        rvKuliner.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+//        rvKuliner.setItemViewCacheSize(24);
+//        rvKuliner.setDrawingCacheEnabled(true);
+//        rvKuliner.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
 
 //        recyclerView.setLayoutManager(new GridLayoutManager(CookingRecipes.this, 2));?
-        rvLayoutKuliner = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        rvKuliner.setLayoutManager(rvLayoutKuliner);
+//        rvLayoutKuliner = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+//        rvKuliner.setLayoutManager(rvLayoutKuliner);
 
+        LinearLayoutManager llm =  new LinearLayoutManager(this);
+        llm.setOrientation(LinearLayoutManager.VERTICAL);
+        rvKuliner.setLayoutManager(llm);
+        rvKuliner.setAdapter(rvAdapterKuliner);
     }
 
     @Override
@@ -91,6 +97,7 @@ public class MainActivity extends AppCompatActivity
                 rvKuliner.setAdapter(rvAdapterKuliner);
                 rvAdapterKuliner.notifyDataSetChanged();
 
+                // Debug
                 Toast.makeText(MainActivity.this, "Pesan : " + response.body().getPesan(), Toast.LENGTH_SHORT).show();
                 pbLoading.setVisibility(View.GONE);
 
