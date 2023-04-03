@@ -1,10 +1,9 @@
-package com.candra.kulinernusantara;
-
-import com.candra.kulinernusantara.ModelKuliner;
+package com.candra.kulinernusantara.Model;
 
 import java.util.List;
 
-public class ModelResponse {
+public class ModelResponse
+{
     private int kode;
     private String pesan;
     private List<ModelKuliner> dataKuliner;

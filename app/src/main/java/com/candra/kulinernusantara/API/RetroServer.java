@@ -7,7 +7,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetroServer
 {
     private static final String baseURL = "https://mywebsiteif.000webhostapp.com/";
-
     private static Retrofit retrofit;
 
     // Method Koneksi Retrofit

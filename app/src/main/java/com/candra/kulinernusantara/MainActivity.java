@@ -3,7 +3,6 @@ package com.candra.kulinernusantara;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -14,6 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.candra.kulinernusantara.API.APIRequestData;
 import com.candra.kulinernusantara.API.RetroServer;
 import com.candra.kulinernusantara.Adapter.AdapterKuliner;
+import com.candra.kulinernusantara.Model.ModelKuliner;
+import com.candra.kulinernusantara.Model.ModelResponse;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -27,9 +28,9 @@ public class MainActivity extends AppCompatActivity
 {
     private RecyclerView rvKuliner;
     private ProgressBar pbLoading;
-    private RecyclerView.Adapter rvAdapterKuliner;
+    private RecyclerView.Adapter adKuliner;
 
-    private RecyclerView.LayoutManager rvLayoutKuliner;
+    private RecyclerView.LayoutManager lmKuliner;
     private List<ModelKuliner> listKuliner = new ArrayList<>();
     private FloatingActionButton fabTambahKuliner;
 
@@ -58,10 +59,10 @@ public class MainActivity extends AppCompatActivity
 //        rvLayoutKuliner = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 //        rvKuliner.setLayoutManager(rvLayoutKuliner);
 
-        LinearLayoutManager llm =  new LinearLayoutManager(this);
-        llm.setOrientation(LinearLayoutManager.VERTICAL);
-        rvKuliner.setLayoutManager(llm);
-        rvKuliner.setAdapter(rvAdapterKuliner);
+//        LinearLayoutManager llm =  new LinearLayoutManager(this);
+//        llm.setOrientation(LinearLayoutManager.VERTICAL);
+//        rvKuliner.setLayoutManager(llm);
+//        rvKuliner.setAdapter(rvAdapterKuliner);
     }
 
     @Override
@@ -89,13 +90,12 @@ public class MainActivity extends AppCompatActivity
             public void onResponse(Call<ModelResponse> call, Response<ModelResponse> response) {
                 int kode = response.body().getKode();
                 String pesan = response.body().getPesan();
-
                 listKuliner = response.body().getDataKuliner();
 
-                rvAdapterKuliner = new AdapterKuliner(MainActivity.this, listKuliner);
+                adKuliner = new AdapterKuliner(MainActivity.this, listKuliner);
 
-                rvKuliner.setAdapter(rvAdapterKuliner);
-                rvAdapterKuliner.notifyDataSetChanged();
+                rvKuliner.setAdapter(adKuliner);
+                adKuliner.notifyDataSetChanged();
 
                 // Debug
                 Toast.makeText(MainActivity.this, "Pesan : " + response.body().getPesan(), Toast.LENGTH_SHORT).show();

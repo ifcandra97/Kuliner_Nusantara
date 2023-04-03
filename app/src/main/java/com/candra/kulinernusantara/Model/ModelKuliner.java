@@ -1,8 +1,8 @@
-package com.candra.kulinernusantara;
+package com.candra.kulinernusantara.Model;
 
 public class ModelKuliner {
     private int id;
-    private String nama, asal, deskripsi_singkat, deskripsi_lengkap;
+    private String nama, asal, deskripsi_singkat;
 
     public int getId() {
         return id;
@@ -18,9 +18,5 @@ public class ModelKuliner {
 
     public String getDeskripsi_singkat() {
         return deskripsi_singkat;
-    }
-
-    public String getDeskripsi_lengkap() {
-        return deskripsi_lengkap;
     }
 }

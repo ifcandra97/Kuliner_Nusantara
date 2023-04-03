@@ -16,8 +16,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.candra.kulinernusantara.API.APIRequestData;
 import com.candra.kulinernusantara.API.RetroServer;
 import com.candra.kulinernusantara.MainActivity;
-import com.candra.kulinernusantara.ModelKuliner;
-import com.candra.kulinernusantara.ModelResponse;
+import com.candra.kulinernusantara.Model.ModelKuliner;
+import com.candra.kulinernusantara.Model.ModelResponse;
 import com.candra.kulinernusantara.R;
 import com.candra.kulinernusantara.UpdateActivity;
 

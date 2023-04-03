@@ -1,6 +1,6 @@
 package com.candra.kulinernusantara.API;
 
-import com.candra.kulinernusantara.ModelResponse;
+import com.candra.kulinernusantara.Model.ModelResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -19,7 +19,7 @@ public interface APIRequestData
     Call<ModelResponse> ardCreate(
             @Field("nama") String nama,
             @Field("asal") String asal,
-            @Field("deskripsi") String deskripsi
+            @Field("deskripsi_singkat") String deskripsiSingkat
     );
 
     @FormUrlEncoded
@@ -34,6 +34,6 @@ public interface APIRequestData
             @Field("id") int id,
             @Field("nama") String nama,
             @Field("asal") String asal,
-            @Field("deskripsi") String deskripsi
+            @Field("deskripsi_singkat") String deskripsiSingkat
     );
 }
